@@ -4,7 +4,7 @@ pipeline {
         stage("Build and Push"){
             steps{
                 sh "cd vote"
-                sh "docker build -t anuhya23/vote:v1"
+                sh "docker build -t anuhya23/vote:v2 ."
             }
         }
         stage("Deploy"){
