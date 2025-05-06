@@ -10,6 +10,12 @@ pipeline {
         string(name: 'BRANCH', defaultValue: 'develop', description: '')
         choice(name: 'ENV', choices: ['dev', 'qa', 'uat'], description: '')
     }
+    environment {
+    }
+    triggers {
+        cron('00 */4 * * *')
+        pollSCM('* * * * *')
+    }
     stages{
         stage("Build and Push"){
             steps{
